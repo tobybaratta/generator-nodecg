@@ -155,7 +155,7 @@ export default class AppGenerator extends Generator {
 		try {
 			const un = await githubUsername(this.props.authorEmail!);
 			username = un ?? '';
-		} catch {}
+		} catch { }
 
 		const prompt = await this.prompt({
 			name: 'githubAccount',
@@ -307,7 +307,7 @@ export default class AppGenerator extends Generator {
 				concurrently: '*',
 			});
 			/* eslint-enable @typescript-eslint/naming-convention */
-			
+
 			if (this.props.react) {
 				await this.addDependencies(['react', 'react-dom']);
 				await this.addDevDependencies(['@types/react', '@types/react-dom']);
